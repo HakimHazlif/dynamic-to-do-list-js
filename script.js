@@ -6,21 +6,23 @@ document.addEventListener("DOMContentLoaded", function () {
   function addTask() {
     const taskText = taskInput.ariaValueMax.trim();
 
-    if (!taskText) alert("Enter a task");
+    if (taskText === "") {
+      alert("Enter a task");
+    } else {
+      const taskEl = document.createElement("li");
+      taskEl.textContent = taskText;
+      const removeBtn = document.createElement("button");
+      removeBtn = "Remove";
+      removeBtn.classList.add("remove-btn");
 
-    const taskEl = document.createElement("li");
-    taskEl.textContent = taskText;
-    const removeBtn = document.createElement("button");
-    removeBtn = "Remove";
-    removeBtn.classList.add("remove-btn");
+      removeBtn.addEventListener("click", function () {
+        taskEl.remove;
+      });
 
-    removeBtn.addEventListener("click", function () {
-      taskEl.remove;
-    });
-
-    taskEl.appendChild(removeBtn);
-    taskList.appendChild(taskEl);
-    taskInput.value = "";
+      taskEl.appendChild(removeBtn);
+      taskList.appendChild(taskEl);
+      taskInput.value = "";
+    }
   }
 
   addButton.addEventListener("click", addTask);
