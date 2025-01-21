@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const taskList = document.getElementById("task-list");
 
   function addTask() {
-    const taskText = taskInput.ariaValueMax.trim();
+    const taskText = taskInput.value.trim();
 
     if (taskText === "") {
       alert("Enter a task");
